@@ -3,5 +3,20 @@
     font-size: 4rem;
     color: black;
     text-align: center;
-    margin-top: 20rem;
+    margin: 7rem auto;
+}
+
+.intro {
+    font-family: 'Marvel', sans-serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: black;
+    line-height: 2;
+    margin: 1rem 5rem;
+    padding: 1rem;
+    background: #ffffff59;
+    box-shadow: 0 8px 32px 0 #1f26875e;
+    backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
 }

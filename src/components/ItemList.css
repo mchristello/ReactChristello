@@ -1,0 +1,23 @@
+.item_list {
+    text-align: center;
+    margin: 3rem auto;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.item_list h1 {
+    text-decoration: underline;
+    margin: 4rem auto;
+}
+
+.spinner {
+    margin: 4rem auto;
+}
+
+.item_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 2rem;
+    margin: auto 5rem;
+}
