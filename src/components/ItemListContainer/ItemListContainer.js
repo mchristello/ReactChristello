@@ -1,29 +1,31 @@
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
 import React, { useEffect, useState } from 'react';
-// import Paletero from '../../productos.json';
 import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from 'react-router-dom';
-import { getProducts } from '../../utils/products.js';
+import { getAllProducts, getProductsByCategory } from '../../utils/products.js';
 
 
 
 const ItemListContainer = ({ greeting }) => {
 
     const [paletero, setPaletero] = useState([]);
+    const { categoryId } = useParams();
     const [loading, setLoading] = useState(true);
-    
-    useEffect(()=> {
-        getProducts()
-            .then((productos) => setPaletero(productos))
-            .catch((error) => console.log(error))
-            .finally(() => setLoading(false))
-    }, [])
 
-    const { categoryName } = useParams();
     useEffect(()=> {
-        console.log(categoryName);
-    }, [categoryName])
+        if (categoryId) {
+            getProductsByCategory(categoryId)
+                .then((productos) => setPaletero(productos))
+                .catch((error) => console.log(error))
+                .finally(() => setLoading(false))
+        } else {
+            getAllProducts()
+                .then((productos) => setPaletero(productos))
+                .catch((error) => console.log(error))
+                .finally(() => setLoading(false))
+        }
+    }, [categoryId])
 
     return ( 
         <section className='itemListContainer'>

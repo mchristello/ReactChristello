@@ -1,7 +1,7 @@
 import Paletero from '../productos.json';
 
 
-export const getProducts = () => {
+export const getAllProducts = () => {
     const prom = new Promise ((resolve)=> {
         setTimeout(() => {
             return resolve(Paletero);
@@ -10,6 +10,15 @@ export const getProducts = () => {
     return prom
 };
 
+export const getProductsByCategory = (categoryId) => {
+    const prom = new Promise ((resolve)=> {
+        const results = Paletero.filter((items) => items.category === categoryId);
+            setTimeout(() => {
+                return resolve(results);
+            }, 2000)
+    })
+    return prom
+};
 
 export const getProduct = (id)=> {
     const promise = new Promise ((resolve) => {
@@ -20,19 +29,3 @@ export const getProduct = (id)=> {
     });
     return promise
 };
-
-
-
-
-    // const prom = new Promise((resolve) => {
-    //     setTimeout(() => {
-    //         resolve(Paletero);
-    //     }, 3000);
-    // })
-
-    // useEffect (()=> {
-    //     prom
-    //     .then((res) => setPaletero(res))
-    //     .catch((error) => console.log(error))
-    //     .finally(() => setLoading(false))
-    // }, []);

@@ -16,10 +16,10 @@ const NavBar = () => {
                     </Navbar.Brand>
                     <Nav>
                         <Nav.Link as={Link}to='/'>Home</Nav.Link>
-                        <Nav.Link as={Link}to="/category/palas">Palas</Nav.Link>
-                        <Nav.Link as={Link}to="/category/zapatillas">Zapatillas</Nav.Link>
-                        <Nav.Link as={Link}to="/category/bolsos">Bolsos</Nav.Link>
-                        <Nav.Link as={Link}to="/contacto">Contacto</Nav.Link>
+                        <Nav.Link as={Link}to="/category/Palas">Palas</Nav.Link>
+                        <Nav.Link as={Link}to="/category/Zapatillas">Zapatillas</Nav.Link>
+                        <Nav.Link as={Link}to="/category/Bolsos">Bolsos</Nav.Link>
+                        <Nav.Link as={Link}to="/Contacto">Contacto</Nav.Link>
                     </Nav>
                     <CartWidget />
                     <ItemSerch />

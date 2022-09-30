@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "tipo": "Pala",
-        "pictureUrl": "/img/AT10_18k.webp",
+        "category": "Palas",
+        "pictureUrl": "/img/AT10_18k.jpg",
         "marca": "NOX",
         "modelo": "AT10 18k",
         "anio": 2022,
@@ -11,8 +11,8 @@
     },
     {
         "id": 2,
-        "tipo": "Pala",
-        "pictureUrl": "img/ML10_ProCup.webp",
+        "category": "Palas",
+        "pictureUrl": "img/ML10_ProCup.jpg",
         "marca": "NOX",
         "modelo": "ML10 Pro Cup",
         "anio": 2022,
@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "tipo": "Pala",
+        "category": "Palas",
         "pictureUrl": "img/Head_AlphaElite.jpg",
         "marca": "Head",
         "modelo": "Aplha Elite",
@@ -31,7 +31,7 @@
     },
     {
         "id": 4,
-        "tipo": "Pala",
+        "category": "Palas",
         "pictureUrl": "img/Head_DeltaPro.jpg",
         "marca": "Head",
         "modelo": "Delta Pro",
@@ -41,7 +41,7 @@
     },
     {
         "id": 5,
-        "tipo": "Pala",
+        "category": "Palas",
         "pictureUrl": "img/Bullpadel_Hack03.jpg",
         "marca": "Bullpadel",
         "modelo": "Hack 03",
@@ -51,7 +51,7 @@
     },
     {
         "id": 6,
-        "tipo": "Pala",
+        "category": "Palas",
         "pictureUrl": "img/Bullpadel_Vertex03.jpg",
         "marca": "Bullpadel",
         "modelo": "Vertex 03",
@@ -61,7 +61,7 @@
     },
     {
         "id": 7,
-        "tipo": "Pala",
+        "category": "Palas",
         "pictureUrl": "img/Babolat_AirViper.jpg",
         "marca": "Babolat",
         "modelo": "Air Viper",
@@ -71,7 +71,7 @@
     },
     {
         "id": 8,
-        "tipo": "Pala",
+        "category": "Palas",
         "pictureUrl": "img/Babolat_TechnicalViper.webp",
         "marca": "Babolat",
         "modelo": "Technical Viper",
@@ -81,8 +81,8 @@
     },
     {
         "id": 9,
-        "tipo": "Zapatilla",
-        "pictureUrl": "img/Zapatillas_AT10_Rojo.webp",
+        "category": "Zapatillas",
+        "pictureUrl": "img/Zapatillas_AT10_Rojo.jpg",
         "marca": "NOX",
         "modelo": "AT10 Rojo/Negro",
         "anio": 2022,
@@ -91,7 +91,7 @@
     },
     {
         "id": 10,
-        "tipo": "Zapatilla",
+        "category": "Zapatillas",
         "pictureUrl": "img/Head_SprintPro.jpg",
         "marca": "Head",
         "modelo": "Sprint Pro",
@@ -101,7 +101,7 @@
     },
     {
         "id": 11,
-        "tipo": "Zapatilla",
+        "category": "Zapatillas",
         "pictureUrl": "img/Head_SprintEvo.jpg",
         "marca": "Head",
         "modelo": "Sprint Evo",
@@ -111,7 +111,7 @@
     },
     {
         "id": 12,
-        "tipo": "Zapatilla",
+        "category": "Zapatillas",
         "pictureUrl": "img/Bullpadel_ZapatillaVertex.jpg",
         "marca": "Bullpadel",
         "modelo": "Vertex",
@@ -121,7 +121,7 @@
     },
     {
         "id": 13,
-        "tipo": "Zapatilla",
+        "category": "Zapatillas",
         "pictureUrl": "img/Bullpadel_ZapatillaHack.jpg",
         "marca": "Bullpadel",
         "modelo": "Hack",
@@ -131,7 +131,7 @@
     },
     {
         "id": 14,
-        "tipo": "Zapatilla",
+        "category": "Zapatillas",
         "pictureUrl": "img/Babolat_JetPremura.jpg",
         "marca": "Babolar",
         "modelo": "Jet Premura",
@@ -141,7 +141,7 @@
     },
     {
         "id": 15,
-        "tipo": "Bolso",
+        "category": "Bolsos",
         "pictureUrl": "img/Head_TourTeamPadelBag.jpg",
         "marca": "Head",
         "modelo": "Tour Team Padel Bag",
@@ -151,7 +151,7 @@
     },
     {
         "id": 16,
-        "tipo": "Bolso",
+        "category": "Bolsos",
         "pictureUrl": "img/Head_ElitePadelBag.jpg",
         "marca": "Head",
         "modelo": "Elite Padel Bag",
@@ -161,7 +161,7 @@
     },
     {
         "id": 17,
-        "tipo": "Bolso",
+        "category": "Bolsos",
         "pictureUrl": "img/Bullpadel_BolsoVertex.jpg",
         "marca": "Bullpadel",
         "modelo": "Vertex",
@@ -171,7 +171,7 @@
     },
     {
         "id": 18,
-        "tipo": "Bolso",
+        "category": "Bolsos",
         "pictureUrl": "img/Bullpadel_BolsoFlow.jpg",
         "marca": "Bullpadel",
         "modelo": "Flow",
@@ -181,8 +181,8 @@
     },
     {
         "id": 19,
-        "tipo": "Bolso",
-        "pictureUrl": "img/Bolso_AT10.webp",
+        "category": "Bolsos",
+        "pictureUrl": "img/Bolso_AT10.jpg",
         "marca": "NOX",
         "modelo": "AT10",
         "anio": 2021,
