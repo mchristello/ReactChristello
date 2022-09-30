@@ -12,7 +12,7 @@ import CheckOut from './components/CheckOut/CheckOut';
 function App() {
 
   return (
-    <BrowserRouter >
+    <BrowserRouter basename='/ReactChristello' >
       <div className="App">
         <NavBar />
         <Routes>
