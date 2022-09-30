@@ -20,3 +20,15 @@
     border-radius: 10px;
     border: 1px solid #ffffff2e;
 }
+
+.container_loading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    font-family: 'Marvel', sans-serif;
+    font-size: 3rem;
+}

@@ -1,0 +1,9 @@
+.navbar_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.brand {
+    font-family: 'Marvel', sans-serif;
+}

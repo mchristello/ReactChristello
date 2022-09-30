@@ -2,6 +2,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { Link } from 'react-router-dom';
+
 
 const CartWidget = () => {
 
@@ -11,7 +13,7 @@ const CartWidget = () => {
     const handleShow = () => setShow(true);
 
     return ( 
-        <>
+        <Link to='/Cart'>
             <Button variant='dark' size='lg' onClick={handleShow}>
                 <AiOutlineShoppingCart />
             </Button>
@@ -29,7 +31,7 @@ const CartWidget = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </>
+        </Link>
     );
 }
 
