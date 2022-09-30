@@ -1,9 +1,10 @@
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
 import React, { useEffect, useState } from 'react';
-import Paletero from '../../productos.json';
+// import Paletero from '../../productos.json';
 import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from 'react-router-dom';
+import { getProducts } from '../../utils/products.js';
 
 
 
@@ -11,20 +12,13 @@ const ItemListContainer = ({ greeting }) => {
 
     const [paletero, setPaletero] = useState([]);
     const [loading, setLoading] = useState(true);
-
-    const prom = new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(Paletero);
-        }, 3000);
-    })
-
-    useEffect (()=> {
-        prom
-        .then((res) => setPaletero(res))
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(false))
-    }, []);
-
+    
+    useEffect(()=> {
+        getProducts()
+            .then((productos) => setPaletero(productos))
+            .catch((error) => console.log(error))
+            .finally(() => setLoading(false))
+    }, [])
 
     const { categoryName } = useParams();
     useEffect(()=> {
