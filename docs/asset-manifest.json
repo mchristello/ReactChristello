@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ReactChristello/static/css/main.aff08694.css",
-    "main.js": "/ReactChristello/static/js/main.06006cd9.js",
+    "main.css": "/ReactChristello/static/css/main.30906f5f.css",
+    "main.js": "/ReactChristello/static/js/main.aadddf6e.js",
     "static/js/787.6e3ed26e.chunk.js": "/ReactChristello/static/js/787.6e3ed26e.chunk.js",
     "index.html": "/ReactChristello/index.html",
-    "main.aff08694.css.map": "/ReactChristello/static/css/main.aff08694.css.map",
-    "main.06006cd9.js.map": "/ReactChristello/static/js/main.06006cd9.js.map",
+    "main.30906f5f.css.map": "/ReactChristello/static/css/main.30906f5f.css.map",
+    "main.aadddf6e.js.map": "/ReactChristello/static/js/main.aadddf6e.js.map",
     "787.6e3ed26e.chunk.js.map": "/ReactChristello/static/js/787.6e3ed26e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aff08694.css",
-    "static/js/main.06006cd9.js"
+    "static/css/main.30906f5f.css",
+    "static/js/main.aadddf6e.js"
   ]
 }

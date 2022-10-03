@@ -12,15 +12,12 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         getProduct(id)
-            .then((data) => {
-                setItem(data)
-            })
+            .then((data) => setItem(data))
             .catch((error) => console.warn(error))
     }, [id]);
 
     return ( 
         <Container>
-            <h1>Detalle del Producto</h1>
             <ItemDetail product={item} />
         </Container>
     );

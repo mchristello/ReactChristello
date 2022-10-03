@@ -18,12 +18,14 @@ const Counter = ({ stock }) => {
 
     return (
         <Container className='counter_container'>
-            <h6>El Stock disponible es de: { stock } unidades.</h6>
             <section className='counter'>
                 <Button onClick={countDown} variant="danger"> - </Button>
                 <h4 style={{color:"black"}}> {counter} </h4>
                 <Button onClick={countUp} variant="success"> + </Button>
+                <Button variant="outline-info">Agregar al Carrito</Button>
             </section>
+            <h6>El Stock disponible es de: { stock } unidades.</h6>
+
         </Container>
     );
 };

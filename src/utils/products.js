@@ -15,7 +15,7 @@ export const getProductsByCategory = (categoryId) => {
         const results = Paletero.filter((items) => items.category === categoryId);
             setTimeout(() => {
                 return resolve(results);
-            }, 2000)
+            }, 1000)
     })
     return prom
 };
@@ -25,7 +25,7 @@ export const getProduct = (id)=> {
         const result = Paletero.find((item) => item.id === parseInt(id))
             setTimeout(()=>{
                 return resolve(result);
-            }, 2000);
+            }, 1000);
     });
     return promise
 };

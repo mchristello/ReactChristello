@@ -15,7 +15,7 @@ const Item = ( {product} ) => {
                     <h5>Año: {product.anio}</h5>
                     <h5>Precio: ${product.price}</h5>
                 </Card.Text>
-                <Button as={Link}to={`item/${product.id}`} className="btn_agregar" variant="outline-success">Ver Detalle</Button>
+                <Button as={Link}to={`/item/${product.id}`} className="btn_agregar" variant="outline-success">Ver Detalle</Button>
             </Card.Body>
         </Card>
     );

@@ -1,0 +1,16 @@
+.item_detail__card {
+    font-family: 'Poppins', sans-serif;
+    margin: 5rem auto;
+}
+
+.item_detail__header {
+    font-size: 4rem;
+}
+
+.item_detail__title {
+    font-size: 3rem;
+}
+
+.item_detail__body {
+    margin: 8rem auto;
+}

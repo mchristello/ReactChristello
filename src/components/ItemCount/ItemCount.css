@@ -18,7 +18,8 @@
     flex-direction: row;
     justify-content: space-between;
     gap: .5rem;
-    width: 100%;
+    /* width: 25%; */
+    margin: 1rem;
     color: snow;
     background: #ffffff59;
     box-shadow: 0 8px 32px 0 #1f26875e;
