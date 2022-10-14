@@ -1,4 +1,41 @@
+.modal-content {
+    /* width: 50vw; */
+}
+
+.modal-header {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.modal-body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.modal-footer {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-footer p {
+    font-size: 1.5rem;
+    background: rgb(230, 228, 228);
+    border-radius: 25px;
+}
+
+.modal-footer div {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
 .container svg {
     color:snow;
     font-size: 28px;
+}
+
+.cart-widget__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

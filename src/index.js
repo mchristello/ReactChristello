@@ -4,6 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAmeubi7Vz5GxvvSHOwwvG8KTrP3pb3nDo",
+  authDomain: "padel-market-2259b.firebaseapp.com",
+  projectId: "padel-market-2259b",
+  storageBucket: "padel-market-2259b.appspot.com",
+  messagingSenderId: "32565474615",
+  appId: "1:32565474615:web:d9e5ea803d398b071056b2"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

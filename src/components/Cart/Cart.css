@@ -1,0 +1,29 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cart_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+    border: 2px outset;
+    border-radius: 50px 100px 50px 100px;
+    background: linear-gradient(snow, #cce1ae, #fff);
+}
+
+.card_img {
+    border-radius: 50px 100px 50px 100px;
+}
+
+.btn_agregar {
+    width: 70%;
+}

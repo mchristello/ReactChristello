@@ -1,9 +1,9 @@
 import './ItemListContainer.css';
 import ItemList from '../ItemList/ItemList.js';
 import React, { useEffect, useState } from 'react';
-import Spinner from 'react-bootstrap/Spinner';
 import { useParams } from 'react-router-dom';
 import { getAllProducts, getProductsByCategory } from '../../utils/products.js';
+import Loader from '../Loader';
 
 
 
@@ -35,7 +35,7 @@ const ItemListContainer = ({ greeting }) => {
                 <p>También trabajamos a pedido. Si necesitas algo que no encontrás en nuestro catálogo, no dudes en ponerte en contacto con nosotros a través de cualquier medio, y vamos a darte varias opciones para que te hagas con el producto que estás buscando.</p>
                 <p>Sin más para decir, te dejamos para que veas y elijas. Cualquier duda nos encontramos a disposición tuya.</p>
             </article>
-            {loading ? <div className='container_loading'><p className='loading'>Cargando productos...</p> <Spinner animation="border" variant="primary" size="xl" /></div> : <ItemList products={ paletero }/>}
+            {loading ? <Loader /> : <ItemList products={ paletero }/>}
         </section>
     );
 }

@@ -7,5 +7,5 @@ const CheckOut = () => {
         </Container>
     );
 }
- 
+
 export default CheckOut;
