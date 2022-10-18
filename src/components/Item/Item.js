@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import { FcSearch } from 'react-icons/fc';
 import './Item.css';
 
 const Item = ( {product} ) => {
@@ -17,7 +18,7 @@ const Item = ( {product} ) => {
                     <h5>Año: {product.anio}</h5>
                     <h5>Precio: ${product.price}</h5>
                 </Card.Text>
-                <Button as={Link}to={`/item/${product.id}`} className="btn_agregar" variant="outline-success">Ver Detalle</Button>
+                <Button as={Link}to={`/item/${product.id}`} className="btn_agregar" variant="outline-success"> <FcSearch /> Ver Detalle</Button>
             </Card.Body>
         </Card>
     );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './ItemCount.css';
 
 const ItemCount = ({ stock, onAdd }) => {
@@ -27,7 +28,7 @@ const ItemCount = ({ stock, onAdd }) => {
                     <span style={{color:"black"}}> { counter } </span>
                     <Button onClick={handleClickUp} variant="success"> + </Button>
                 </section>
-                <Button variant="outline-info" onClick={handleClick} >Agregar al Carrito</Button>
+                <Button variant="info" onClick={handleClick} >Agregar al Carrito <AiOutlineShoppingCart /></Button>
             </Container>
     );
 };

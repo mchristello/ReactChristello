@@ -7,3 +7,13 @@
 .brand {
     font-family: 'Marvel', sans-serif;
 }
+
+.date {
+    font-family: 'Marvel', sans-serif;
+    font-size: 1.8rem;
+    background: #ffffffd2;;
+    box-shadow: 0 8px 32px 0 #1f26875e;
+    backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
+}

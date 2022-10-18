@@ -1,50 +1,58 @@
-import { Button, Card, Container, Table } from "react-bootstrap";
+import { Button, Container, Table } from "react-bootstrap";
 import { IoTrashOutline } from 'react-icons/io5';
+import { FcInfo, FcCancel, FcPaid } from 'react-icons/fc';
+import { TiArrowBack } from 'react-icons/ti';
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import './Cart.css';
+import { useState } from "react";
+import { createOrder } from "../../utils/orders";
+import OrderModal from "./OrderModal";
+
+
+const buyerMock = {
+    name: 'Arya Stark',
+    phone: '00115546992', 
+    email: 'arya@perrita.com'
+}
 
 
 
 const Cart = () => {
 
     const { cart, removeItem, clear, total } = useCartContext();
+    const [user, setUser] = useState(buyerMock);
+    const [orderId, setOrderId] = useState();
+    const [showModal, setShowModal] = useState(false)
 
-    const handleClick = (id) => {
+    const handleRemove = (id) => {
         removeItem(id);
     }
+
+    const handleBuy = async () => {
+        const newOrder = {
+            buyer: buyerMock,
+            items: cart,
+            total
+        }
+        const newOrderId = await createOrder(newOrder);
+        setOrderId(newOrderId);
+        console.log(orderId);
+        clear();
+    }
+
+    const handleOpen = () => { setShowModal(true) };
+
+    const handleClose = () => { setShowModal(false) };
 
     const showCartTable = cart.length > 0;
 
     return ( 
         <Container className="cart">
-            <h1>Acá se muestra el Carrito de Compras</h1>
-            {/* <Container className="cart_container">
-                {cart.map((product) => {
-                    return (
-                        <Card key={ product.id } className='card_items'>
-                            <Card.Img className='card_img container-fluid' variant="top" src={product.pictureUrl} />
-                            <Card.Body>
-                                <Card.Title><h2>{product.marca}</h2></Card.Title>
-                                <Card.Subtitle className="mb-3 text-muted"><h3>{product.modelo}</h3></Card.Subtitle>
-                                <Card.Text>
-                                    <h5><u>Año:</u> {product.anio}</h5>
-                                    <h5><b><u>Precio:</u> ${product.price}</b></h5>
-                                    <h6>Cantidad: {product.quantity}</h6>
-                                </Card.Text>
-                                <Card.Footer>
-                                    <Button onClick={()=> removeItem(product)} > Eliminar </Button>
-                                </Card.Footer>
-                            </Card.Body>
-                        </Card>
-                    )
-                    // (carrito.length > 1 ? (<Button variant="danger" onClick={()=> clear()} > Vaciar Carrito </Button>) : (<h3>Su Carrito está vacío.</h3>))
-                })}
-            </Container>
-            <h2> El total de su compra es de: ${ total } </h2> */}
+            <h1 className="cart__title">Tu carrito de compras.</h1>
                 {showCartTable && 
                     (
-                    <div>
+                    <div className="cart__table">
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
@@ -58,12 +66,17 @@ const Cart = () => {
                                     {cart.map((product) => {
                                         return (
                                             <tr key={ product.id }>
-                                                <td>{product.marca} {product.modelo}</td>
-                                                <td>${product.price}</td>
-                                                <td>{product.quantity}</td>
+                                                <td className="table__title">
+                                                    <Link to={`/item/${product.id}`}>
+                                                        <FcInfo />
+                                                    </Link>
+                                                        {product.marca} {product.modelo}
+                                                </td>
+                                                <td className="table__price">${product.price}</td>
+                                                <td className="table__quantity">{product.quantity}</td>
                                                 <td> 
-                                                    <Button variant="outline-danger" onClick={()=> handleClick(product.id)}>
-                                                        <IoTrashOutline />
+                                                    <Button variant="outline-danger" onClick={()=> handleRemove(product.id)}>
+                                                        <FcCancel />
                                                     </Button>
                                                 </td>
                                             </tr>
@@ -71,16 +84,21 @@ const Cart = () => {
                                     })}
                             </tbody>
                         </Table>
-                        <h3>El total de la compra es de: ${total}</h3>
+                        <h3 className="cart__table--total"><u>El total de la compra es de:</u> <b>${total}</b> </h3>
+                        <Container className='cart__table--btn_container'>
+                            <Button className="cart__table--btn" variant="success" onClick={(handleOpen)} >Finalizar Compra <FcPaid /></Button>
+                            <Button className="cart__table--btn" variant="danger" onClick={() => (clear())} >Vaciar Carrito <IoTrashOutline /></Button>
+                        </Container>
                     </div>
                     )
                 }
                 {!showCartTable && (<div>
                         <h2>No hay productos en el Carrito</h2>
                         <Link to='/'>
-                            <Button variant="info">Volver a Home</Button>
+                            <Button className="cart__table--btn" variant="info"><TiArrowBack />   Ir a comprar!</Button>
                         </Link>
                     </div>)}
+                    <OrderModal showModal={showModal} onClose={handleClose} onBuy={handleBuy} orderId={orderId}/>
             </Container>
     )
 }

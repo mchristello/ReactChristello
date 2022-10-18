@@ -8,17 +8,17 @@ import './ItemDetailContainer.css';
 const ItemDetailContainer = () => {
 
     const { id } = useParams();
-    const [item, setItem] = useState([]);
+    const [product, setProduct] = useState([]);
 
     useEffect(() => {
         getProduct(id)
-            .then((data) => setItem(data))
-            .catch((error) => console.warn(error))
+            .then((product) => setProduct(product))
+            .catch((error) => console.log(error))
     }, [id]);
 
     return ( 
         <Container>
-            <ItemDetail product={item} />
+            <ItemDetail product={product} />
         </Container>
     );
 }

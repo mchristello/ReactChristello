@@ -16,7 +16,7 @@ export const CartContextProvider = ({children}) => {
     const [cart, setCart] = useState([]);
 
 
-    const isInCart = (id) => cart.some((item) => item.id === parseInt(id));
+    const isInCart = (id) => cart.some((item) => item.id === id);
 
     // const addItem = (product, quantity) => {
     //     if (isInCart(product.id) == true) {
@@ -60,7 +60,7 @@ export const CartContextProvider = ({children}) => {
         } else {
             // Actualizar cantidad
             // Buscamos el item dentro del carrito obteniendo su index
-            const itemIndex = cart.findIndex(((item) => item.id === parseInt(product.id)));
+            const itemIndex = cart.findIndex(((item) => item.id === product.id));
             // Se crea un borrador del item obtenido para modificarlo y evitar la modificación en el estado de React
             const itemDraft = { ...cart[itemIndex] };
             // Actualizamos "quantity" en el borrador
@@ -71,11 +71,20 @@ export const CartContextProvider = ({children}) => {
             cartDraft[itemIndex] = itemDraft;
             // Se modifica el cart origial con el estado de React para incluír la cant nueva
             setCart(cartDraft);
+            return Swal.fire ({
+                        title: `Item ya está en carrito!`,
+                        text: `Actualizamos la cantidad de este item en tu carrito`,                        
+                        icon: `warning`,
+                        showConfirmButton: false,
+                        timerProgressBar: true,
+                        timer: 1500
+                });
 
             // version corta y mas sensilla
-            // const item = cart.find((item) => item.id === parseInt(product.id));
+            // const item = cart.find((item) => item.id === product.id);
             // item.quantity = item.quantity + quantity;
             // setCart([...cart]);
+            // console.log(cart);
             // return Swal.fire ({
             //         title: `Item ya está en carrito!`,
             //         text: `Actualizamos la cantidad de este item en tu carrito`,
