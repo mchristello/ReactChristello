@@ -4,7 +4,6 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import './ItemCount.css';
 
 const ItemCount = ({ stock, onAdd }) => {
-    // Funciones del CartContext
 
     const [counter, setCounter] = useState(1);
 
@@ -25,7 +24,7 @@ const ItemCount = ({ stock, onAdd }) => {
             <Container className='counter_container'>
                 <section className='counter'>
                     <Button onClick={handleClickDown} variant="danger"> - </Button>
-                    <span style={{color:"black"}}> { counter } </span>
+                    <span> { counter } </span>
                     <Button onClick={handleClickUp} variant="success"> + </Button>
                 </section>
                 <Button variant="info" onClick={handleClick} >Agregar al Carrito <AiOutlineShoppingCart /></Button>
@@ -34,6 +33,3 @@ const ItemCount = ({ stock, onAdd }) => {
 };
 
 export default ItemCount;
-
-
-// const [loQueModifico, ComoVaAEstar] = useState(ValorInicial)

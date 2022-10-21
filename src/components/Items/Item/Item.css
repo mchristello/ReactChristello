@@ -4,14 +4,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2rem;
-    border: 2px outset;
+    margin: .5rem 1rem;
+    padding-bottom: .5rem;
+    width: 15rem;
+    border: deeppink .5px outset;
     border-radius: 50px 100px 50px 100px;
     background: linear-gradient(snow, #cce1ae, #fff);
 }
 
 .card_img {
-    border-radius: 50px 100px 50px 100px;
+    border-radius: 50px 120px 50px 120px;
 }
 
 .btn_agregar {

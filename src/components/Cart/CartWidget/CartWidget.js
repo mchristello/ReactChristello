@@ -6,8 +6,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
 import { Badge, Card, Container } from 'react-bootstrap';
-import { useCartContext } from '../../context/CartContext';
-import Cart from '../Cart/Cart';
+import { useCartContext } from '../../../context/CartContext';
+import Cart from '../Cart';
 
 
 const CartWidget = () => {

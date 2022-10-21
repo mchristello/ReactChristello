@@ -1,0 +1,12 @@
+.footer_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Marvel', sans-serif;
+    background: #ffffff59;
+    box-shadow: 0 8px 32px 0 #1f26875e;
+    backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
+    padding: 1rem;
+}

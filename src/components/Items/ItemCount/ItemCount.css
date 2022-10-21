@@ -30,6 +30,6 @@
     border: 1px solid #ffffff2e;
 }
 
-/* .counter button {
-    width: 2rem;
-} */
+.counter span {
+    color: black;
+}

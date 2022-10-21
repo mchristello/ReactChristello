@@ -6,7 +6,7 @@ import './ItemDetail.css';
 import { Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { useCartContext } from '../../context/CartContext';
+import { useCartContext } from '../../../context/CartContext';
 
 const ItemDetail = ({ product }) => {
 

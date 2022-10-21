@@ -7,7 +7,7 @@ import { useCartContext } from "../../context/CartContext";
 import './Cart.css';
 import { useState } from "react";
 import { createOrder } from "../../utils/orders";
-import OrderModal from "./OrderModal";
+import CheckOut from "./CheckOut";
 
 
 const buyerMock = {
@@ -21,7 +21,11 @@ const buyerMock = {
 const Cart = () => {
 
     const { cart, removeItem, clear, total } = useCartContext();
-    const [user, setUser] = useState(buyerMock);
+    const [user, setUser] = useState({
+        name: '',
+        email: '',
+        phone: ''
+    })
     const [orderId, setOrderId] = useState();
     const [showModal, setShowModal] = useState(false)
 
@@ -98,7 +102,7 @@ const Cart = () => {
                             <Button className="cart__table--btn" variant="info"><TiArrowBack />   Ir a comprar!</Button>
                         </Link>
                     </div>)}
-                    <OrderModal showModal={showModal} onClose={handleClose} onBuy={handleBuy} orderId={orderId}/>
+                    <CheckOut showModal={showModal} onClose={handleClose} onBuy={handleBuy} orderId={orderId}/>
             </Container>
     )
 }

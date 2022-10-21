@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react';
 import Swal from 'sweetalert2';
-// import { useLocalStorage } from '../utils/LocalStorage';
+import { useLocalStorage } from '../utils/localStorage';
 
 
 
@@ -12,36 +12,12 @@ export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({children}) => {
 
-    // const [cart, setCart] = useLocalStorage('itemsToCart', []);
-    const [cart, setCart] = useState([]);
+    // const [cart, setCart] = useState([]);
+    const [cart, setCart] = useLocalStorage('cart', []);
 
 
     const isInCart = (id) => cart.some((item) => item.id === id);
 
-    // const addItem = (product, quantity) => {
-    //     if (isInCart(product.id) == true) {
-    //         return Swal.fire ({
-    //                 title: `Item ya está en carrito!`,
-    //                 icon: `warning`,
-    //                 showConfirmButton: false,
-    //                 timer: 1500
-    //         });
-    //     } else {
-    //         const item = {
-    //             ...product,
-    //             quantity
-    //         };
-    //         // cart.push({ ...item, quantity: quantity });
-    //         setCart([...cart, item]);
-    //         Swal.fire ({
-    //             title: `Item agregado!`,
-    //             icon: `success`,
-    //             showConfirmButton: false,
-    //             timer: 1500
-    //         });
-    //         console.log(cart);
-    //     }
-    // }
 
     const addItem = (product, quantity) => {
         if (!isInCart(product.id)) {
@@ -49,7 +25,6 @@ export const CartContextProvider = ({children}) => {
                 ...product,
                 quantity
             };
-            // cart.push({ ...item, quantity: quantity });
             setCart([...cart, item]);
             Swal.fire ({
                 title: `Item agregado!`,
@@ -102,7 +77,6 @@ export const CartContextProvider = ({children}) => {
     
     const clear = () => {
         setCart([]);
-        console.log(cart);
     }
     
     const total = cart.reduce((accumulador, item) => accumulador + (item.price* item.quantity), 0);
