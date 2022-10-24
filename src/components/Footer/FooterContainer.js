@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import FooterRedes from "./FooterRedes";
 import './FooterContainer.css';
 

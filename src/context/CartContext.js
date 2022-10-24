@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext } from 'react';
 import Swal from 'sweetalert2';
 import { useLocalStorage } from '../utils/localStorage';
 

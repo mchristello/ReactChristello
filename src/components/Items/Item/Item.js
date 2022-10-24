@@ -14,7 +14,7 @@ const Item = ( {product} ) => {
             <Card.Body>
                 <Card.Title><h2>{product.marca}</h2></Card.Title>
                 <Card.Subtitle className="mb-3 text-muted"><h3>{product.modelo}</h3></Card.Subtitle>
-                <Card.Text>
+                <Card.Text as='div'>
                     <h5>Año: {product.anio}</h5>
                     <h5>Precio: ${product.price}</h5>
                 </Card.Text>

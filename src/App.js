@@ -11,7 +11,6 @@ import { firebaseConfig } from "./utils/Firebase/firestore";
 import { initializeApp } from "firebase/app";
 import Login from './components/UserInfo/Session/Login';
 import NewUser from './components/UserInfo/Session/NewUser';
-import FooterContainer from './components/Footer/FooterContainer';
 
 
 
@@ -34,7 +33,6 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/newuser' element={<NewUser />} />
             </Routes>
-            {/* <FooterContainer /> */}
           </CartContextProvider>
         </UserContextProvider>
       </div>

@@ -21,11 +21,11 @@ const buyerMock = {
 const Cart = () => {
 
     const { cart, removeItem, clear, total } = useCartContext();
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        phone: ''
-    })
+    // const [user, setUser] = useState({
+    //     name: '',
+    //     email: '',
+    //     phone: ''
+    // })
     const [orderId, setOrderId] = useState();
     const [showModal, setShowModal] = useState(false)
 

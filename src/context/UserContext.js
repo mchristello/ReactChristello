@@ -9,9 +9,7 @@ export const UserContextProvider = ({ children }) => {
 const [userState, setUserState] = useLocalStorage("userLogged", null);
 
 
-// Funcion para registrar a nuevo usuario
-// Recibe un nombre, mail y contrasena
-// Lo guarda en firestore
+// Registro de nuevo usuario
     const registerUser = async (data) => {
         const auth = getAuth();
         try {
@@ -28,14 +26,12 @@ const [userState, setUserState] = useLocalStorage("userLogged", null);
             setUserState(data);
         //enviar a la pagina principal
         } catch (error) {
-            alert(error);
+            console.warn(error);
         }
     };
 
 
-// Funcion para ingresar con un usuario ya registrado
-// Toma el ingreso de los imputs
-// Los compara con los datos y devuelve a pagina de inicio con el usuario logueado
+// Inicio de sesión
 const signIn = async ({ email, password }) => {
     const auth = getAuth();
     try {

@@ -4,24 +4,42 @@ import Row from 'react-bootstrap/Row';
 import { Link } from "react-router-dom";
 import './CheckOut.css';
 import { useState } from 'react';
+import { useCartContext } from "../../context/CartContext";
+import { createOrder } from "../../utils/orders";
 
-const CheckOut = ({ showModal, onClose, onBuy, orderId }) => {
+const CheckOut = ({ showModal, onClose }) => {
 
-    // const [user, setUser] = useState({
-    //     name: '',
-    //     email: '',
-    //     phone: ''
-    // })
+    const [user, setUser] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        emailConfirmed: ''
+    })
 
-    // const handleChange = (field, value) => {
-    //     setUser({
-    //         ...user, 
-    //         [field]: value
-    //     });
-    //     console.log({user});
-    // }
+    const { cart, clear, total } = useCartContext();
 
-    // const isDisable = user.email === [field].confirmEmail;
+    const [orderId, setOrderId] = useState();
+
+    const handleBuy = async () => {
+        const newOrder = {
+            buyer: user,
+            items: cart,
+            total
+        }
+        const newOrderId = await createOrder(newOrder);
+        setOrderId(newOrderId);
+        clear();
+    }
+
+
+    const handleChange = (event) => {
+        setUser({
+            ...user,
+            [event.target.name]: event.target.value
+        });
+    }
+
+    const isDisable = user.name === '' || user.email !== user.emailConfirmed || user.phone === '';
     
 
     return (
@@ -32,6 +50,7 @@ const CheckOut = ({ showModal, onClose, onBuy, orderId }) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form >
+                        <h5>Complete todos los datos para confirmar la orden</h5>
                         <Row className="mb-3">
                             <Form.Group as={Col} md="6">
                                 <Form.Label>Nombre</Form.Label>
@@ -39,6 +58,8 @@ const CheckOut = ({ showModal, onClose, onBuy, orderId }) => {
                                     required
                                     type="text"
                                     placeholder="First name"
+                                    name="name"
+                                    onChange={ handleChange }
                                 />
                             </Form.Group>
                             <Form.Group as={Col} md="6">
@@ -46,7 +67,9 @@ const CheckOut = ({ showModal, onClose, onBuy, orderId }) => {
                                 <Form.Control
                                     required
                                     type="text"
-                                    placeholder="Telefono"
+                                    placeholder="xxx-xxxxxxx"
+                                    name="phone"
+                                    onChange={ handleChange }
                                 />
                             </Form.Group>
                         </Row>
@@ -56,7 +79,8 @@ const CheckOut = ({ showModal, onClose, onBuy, orderId }) => {
                                 <Form.Control 
                                     type="mail" 
                                     placeholder="Ingresa tu Email" 
-                                    required
+                                    name="email"
+                                    onChange={ handleChange }
                                     />
                             </Form.Group>
                             <Form.Group as={Col} md="12">
@@ -64,7 +88,8 @@ const CheckOut = ({ showModal, onClose, onBuy, orderId }) => {
                                 <Form.Control 
                                     type="text"
                                     placeholder="Vuelva a ingresar su Email" 
-                                    equired
+                                    name="emailConfirmed"
+                                    onChange={ handleChange }
                                     />
                             </Form.Group>
                         </Row>
@@ -73,9 +98,9 @@ const CheckOut = ({ showModal, onClose, onBuy, orderId }) => {
                 <Modal.Footer>
                     {!orderId && (
                     <>
-                        <Button variant="success" onClick={onBuy}>
+                        { !isDisable && <Button variant="success" onClick={ handleBuy }>
                             Comprar
-                        </Button>
+                        </Button> }
                         <Button variant="danger" onClick={onClose}>
                             Cancelar
                         </Button>
