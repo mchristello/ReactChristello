@@ -6,43 +6,16 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import './Cart.css';
 import { useState } from "react";
-import { createOrder } from "../../utils/orders";
 import CheckOut from "./CheckOut";
-
-
-const buyerMock = {
-    name: 'Arya Stark',
-    phone: '00115546992', 
-    email: 'arya@perrita.com'
-}
-
 
 
 const Cart = () => {
 
     const { cart, removeItem, clear, total } = useCartContext();
-    // const [user, setUser] = useState({
-    //     name: '',
-    //     email: '',
-    //     phone: ''
-    // })
-    const [orderId, setOrderId] = useState();
     const [showModal, setShowModal] = useState(false)
 
     const handleRemove = (id) => {
         removeItem(id);
-    }
-
-    const handleBuy = async () => {
-        const newOrder = {
-            buyer: buyerMock,
-            items: cart,
-            total
-        }
-        const newOrderId = await createOrder(newOrder);
-        setOrderId(newOrderId);
-        console.log(orderId);
-        clear();
     }
 
     const handleOpen = () => { setShowModal(true) };
@@ -102,7 +75,7 @@ const Cart = () => {
                             <Button className="cart__table--btn" variant="info"><TiArrowBack />   Ir a comprar!</Button>
                         </Link>
                     </div>)}
-                    <CheckOut showModal={showModal} onClose={handleClose} onBuy={handleBuy} orderId={orderId}/>
+                    <CheckOut showModal={showModal} onClose={handleClose} />
             </Container>
     )
 }

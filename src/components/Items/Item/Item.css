@@ -8,13 +8,10 @@
     padding-bottom: .5rem;
     width: 15rem;
     border: deeppink .5px outset;
-    border-radius: 50px 100px 50px 100px;
+    /* border-radius: 50px 100px 50px 100px; */
     background: linear-gradient(snow, #cce1ae, #fff);
 }
 
-.card_img {
-    border-radius: 50px 120px 50px 120px;
-}
 
 .btn_agregar {
     width: 70%;

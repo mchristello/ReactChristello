@@ -1,12 +1,16 @@
 import { createContext } from "react";
 import { useLocalStorage } from '../utils/localStorage';
-import { getUser, setUser } from "../utils/Firebase/firebase";
+import { getUser, setUser } from "../utils/Firebase/firestore";
 import { getAuth, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import Swal from 'sweetalert2';
+
 
 export const UserContext = createContext({});
 
 export const UserContextProvider = ({ children }) => {
+
 const [userState, setUserState] = useLocalStorage("userLogged", null);
+console.log(userState);
 
 
 // Registro de nuevo usuario
@@ -24,9 +28,15 @@ const [userState, setUserState] = useLocalStorage("userLogged", null);
                 uid: user.uid,
             });
             setUserState(data);
-        //enviar a la pagina principal
         } catch (error) {
-            console.warn(error);
+            console.log(error)
+            Swal.fire ({
+                title: `Ups!!`,
+                text: `Revisá los datos ingresados`,
+                icon: `error`,
+                showConfirmButton: false,
+                timer: 1500
+            });
         }
     };
 
@@ -40,7 +50,14 @@ const signIn = async ({ email, password }) => {
         const resolve = await getUser(email)
         setUserState(resolve.docs[0].data());
     } catch (error) {
-    alert(error);
+        console.log(error)
+        Swal.fire ({
+            title: `Ups!!`,
+            text: `Revisá los datos ingresados`,
+            icon: `error`,
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
 };
 
@@ -51,7 +68,7 @@ const logOut = () => {
     });
 };
 
-const data = {
+const utils = {
     userState,
     registerUser,
     signIn,
@@ -59,7 +76,7 @@ const data = {
 };
 
     return (
-        <UserContext.Provider value={data}>
+        <UserContext.Provider value={utils}>
             {children}
         </UserContext.Provider>
     );

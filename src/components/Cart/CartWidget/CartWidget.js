@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { Badge, Card, Container } from 'react-bootstrap';
 import { useCartContext } from '../../../context/CartContext';
 import Cart from '../Cart';
+import './CartWidget.css';
 
 
 const CartWidget = () => {
@@ -45,7 +46,7 @@ const CartWidget = () => {
                                                 <Card.Title>{product.marca}</Card.Title>
                                                 <Card.Subtitle className="mb-2 text-muted">{product.modelo}</Card.Subtitle>
                                                 <Card.Img className='card_img container-fluid' variant="top" src={product.pictureUrl} /> 
-                                                <Card.Text>
+                                                <Card.Text as='div'>
                                                     <p>Cantidad: {product.quantity}</p>
                                                     <p>Precio unidad: ${product.price}</p>
                                                 </Card.Text>

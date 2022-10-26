@@ -10,9 +10,10 @@
     margin: 4rem auto;
 }
 
-.item_grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: auto;
-    margin: auto 5rem;
+.item_flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem auto;
 }

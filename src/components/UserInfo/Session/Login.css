@@ -1,0 +1,26 @@
+.login {
+    font-family: 'Poppins', sans-serif;
+}
+
+.login h2 {
+    font-family: 'Fredericka the Great', cursive;
+    margin: 2rem auto;
+}
+
+.login__form {
+    width: 30vw;
+    margin: 5rem auto;
+    background: #ffffff59;
+    box-shadow: 0 8px 32px 0 #1f26875e;
+    backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
+    padding: 1rem;
+}
+
+.login__btn {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: .5rem;
+}

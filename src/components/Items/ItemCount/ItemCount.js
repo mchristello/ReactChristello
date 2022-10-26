@@ -10,7 +10,7 @@ const ItemCount = ({ stock, onAdd }) => {
     const handleClick = () => onAdd(counter);
 
     const handleClickUp = () => {
-        if(counter < stock) {
+        if(counter < stock) { // No permite agregar más unidades que el stock disponible
             setCounter(counter + 1);
         }
     };

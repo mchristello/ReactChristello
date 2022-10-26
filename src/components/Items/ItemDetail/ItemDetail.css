@@ -1,6 +1,7 @@
 .item_detail__card {
     font-family: 'Poppins', sans-serif;
     margin: 5rem auto;
+    background-color: #f7f7f7!important;
 }
 
 .item_detail__header {

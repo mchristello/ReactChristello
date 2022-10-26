@@ -1,0 +1,12 @@
+
+.user_detail__card {
+    font-family: 'Poppins', sans-serif;
+}
+
+.table {
+    background: #e3fcff40;;
+    box-shadow: 0 8px 32px 0 #1f26875e;
+    backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
+}
