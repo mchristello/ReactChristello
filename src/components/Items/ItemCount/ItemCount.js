@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+// Frameworks
 import { Button, Container } from 'react-bootstrap';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+// React
+import React, { useState } from 'react';
+// CSS
 import './ItemCount.css';
 
 const ItemCount = ({ stock, onAdd }) => {

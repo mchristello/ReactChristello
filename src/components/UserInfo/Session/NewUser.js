@@ -1,9 +1,14 @@
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
-import { UserForm } from '../../UserInfo/Form.js';
-import { useContext } from "react";
-import { UserContext } from "../../../context/UserContext";
+// Components
 import { UserDetail } from "../UserDetail";
+// Frameworks
+import { Form, Button, Col, Row, Container } from "react-bootstrap";
+// React
+import { useContext } from "react";
+import { UserForm } from '../../UserInfo/Form.js';
+import { UserContext } from "../../../context/UserContext";
+// CSS
 import "./NewUser.css";
+
 
 function NewUser() {
     const { userState, registerUser } = useContext(UserContext);
@@ -85,6 +90,7 @@ function NewUser() {
                     <Form.Label>Telefono</Form.Label>
                     <Form.Control
                     name="phone"
+                    placeholder='XXX-XXXXXXX'
                     onChange={handleChange}
                     />
                 </Form.Group>

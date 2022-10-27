@@ -24,6 +24,11 @@
     border: 1px solid #ffffff2e;
 }
 
+.cart__table h4 {
+    background-color: #3c7e3f9a;
+    border-radius: 10px;
+}
+
 .cart__table--total {
     margin-top: 5rem;
 }
@@ -38,4 +43,14 @@
     border-radius: 2rem;
     font-size: 1.2rem;
     margin: 2rem auto;
+}
+
+
+/* MediaQ */
+
+@media only screen and (max-width: 990px) {
+
+    .cart__table--btn_container {
+        flex-direction: column;
+    }
 }

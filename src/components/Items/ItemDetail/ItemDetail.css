@@ -15,3 +15,17 @@
 .item_detail__body {
     margin: 8rem auto;
 }
+
+/* MediaQ */
+
+@media only screen and (max-width: 990px) {
+
+    .row {
+        display: flex!important;
+        flex-direction: column!important;
+    }
+
+    .item_detail__body {
+        margin: 3rem auto;
+    }
+}

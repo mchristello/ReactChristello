@@ -1,8 +1,12 @@
-import { useEffect, useState } from "react";
+// Components
+import ItemDetail from "../ItemDetail/ItemDetail";
+// Frameworks
 import { Container } from "react-bootstrap";
+// React
+import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { getProduct } from "../../../utils/products";
-import ItemDetail from "../ItemDetail/ItemDetail";
+// CSS
 import './ItemDetailContainer.css';
 
 const ItemDetailContainer = () => {

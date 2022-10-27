@@ -1,10 +1,20 @@
+.user_detail h1 {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 3rem;
+    margin: 2rem auto;
+}
 
 .user_detail__card {
     font-family: 'Poppins', sans-serif;
+    background: #e3fcff40;;
+    box-shadow: 0 8px 32px 0 #1f26875e;
+    backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid #ffffff2e;
 }
 
 .table {
-    background: #e3fcff40;;
+    background: #eaececb4;;
     box-shadow: 0 8px 32px 0 #1f26875e;
     backdrop-filter: blur( 4px );
     border-radius: 10px;

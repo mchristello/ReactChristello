@@ -6,3 +6,21 @@
     font-size: 3rem;
     margin: 0 4rem;
 }
+
+
+/* MediaQ */
+@media only screen and (max-width: 990px) {
+
+    .container_loading {
+        position: relative;
+    }
+
+    .spinner {
+        margin: 1rem auto;
+    }
+
+    .loading {
+        font-size: 1.8rem;
+        margin: 0 1rem;
+    }
+}

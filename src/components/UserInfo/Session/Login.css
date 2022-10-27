@@ -1,14 +1,16 @@
 .login {
     font-family: 'Poppins', sans-serif;
+    width: 100%;
 }
 
 .login h2 {
     font-family: 'Fredericka the Great', cursive;
+    font-size: 3rem;
     margin: 2rem auto;
 }
 
 .login__form {
-    width: 30vw;
+    width: 100%;
     margin: 5rem auto;
     background: #ffffff59;
     box-shadow: 0 8px 32px 0 #1f26875e;

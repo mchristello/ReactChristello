@@ -1,13 +1,17 @@
+// Components
+import Cart from '../Cart';
+// Frameworks
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import { Badge, Card, Container } from 'react-bootstrap';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { IoTrashOutline } from 'react-icons/io5';
 import { BsCashStack } from "react-icons/bs";
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
-import { Badge, Card, Container } from 'react-bootstrap';
+// React
+import React, { useState } from 'react';
 import { useCartContext } from '../../../context/CartContext';
-import Cart from '../Cart';
+// Style
 import './CartWidget.css';
 
 

@@ -1,14 +1,16 @@
+// Frameworks
+import { Card, Button, Table, Container, CardGroup } from "react-bootstrap";
+import { getAllOrders } from "../../utils/Firebase/firestore";
+// React
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/UserContext";
-import { Card, Button, Table, Container, CardGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
+// CSS
 import "./UserDetail.css";
-import { getAllOrders } from "../../utils/Firebase/firestore";
 
 export const UserDetail = () => {
     const { userState, logOut } = useContext(UserContext);
     const [orders, setOrders] = useState([]);
-
 
     useEffect(() => {
         const { email } = userState;
@@ -19,46 +21,47 @@ export const UserDetail = () => {
     }, [userState]);
 
     return (
-        <Container className="user_detail mt-5">
+        <Container as='div' className="user_detail mt-5">
+            <h1>Mi Cuenta</h1>
         <Card className="user_detail__card">
             <Card.Header as="h2">
-            Hola <b>{userState.name}</b>!
+            Hola <b>{userState.name} {userState.displayName}</b>!
             </Card.Header>
             <Card.Body>
-            <Card.Title as="h4">Mis Compras</Card.Title>
+            <Card.Title as="h3">Mis Compras</Card.Title>
             <CardGroup >
                 {(orders.length > 0) ? (
                 orders.map((order) => {
                     return (
-                    <Table striped bordered hover key={order.id} className='table' >
-                        <thead>
-                        <tr>
-                            <th>Número de orden: {order.id}</th>
-                            <th>Nombre: {order.buyer.name}</th>
-                            <th>Email: {order.buyer.email}</th>
-                            <th>Telefono: {order.buyer.phone}</th>
-                            <th> Total de la Compra: ${order.total} </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {order.items.map((product) => {
-                            return (
-                            <tr key={product.id}>
-                                <td>Datos del producto</td>
-                                <td>{product.category}</td>
-                                <td>{product.marca} {product.modelo}</td>
-                                <td>Unidades: {product.quantity}</td>
-                                <td>Precio unitario ${product.price}</td>
-                            </tr>
-                            );
-                        })}
-                        </tbody>
-                    </Table>
+                        <Table striped bordered hover responsive key={order.id} className='table' >
+                            <thead>
+                                <tr>
+                                    <th><u>Número de orden:</u> {order.id}</th>
+                                    <th><u>Nombre:</u> {order.buyer.name}</th>
+                                    <th><u>Email:</u> {order.buyer.email}</th>
+                                    <th><u>Telefono:</u> {order.buyer.phoneNumber}</th>
+                                    <th><u>Total de la Compra:</u> ${order.total} </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {order.items.map((product) => {
+                                return (
+                                <tr key={product.id}>
+                                    <td>Datos del producto</td>
+                                    <td>{product.category}</td>
+                                    <td>{product.marca} {product.modelo}</td>
+                                    <td>Unidades: {product.quantity}</td>
+                                    <td>Precio unitario ${product.price}</td>
+                                </tr>
+                                );
+                            })}
+                            </tbody>
+                        </Table>
                     );
                 })
                 ) : (
                 <Container>
-                    <h4>Todavía no has hecho ninguna compra</h4>
+                    <h5 className="mt-4">Todavía no has hecho ninguna compra</h5>
                     <Link to='/'>
                         <Button variant="info" className="mt-4">
                             Volver a la Tienda.
@@ -69,7 +72,7 @@ export const UserDetail = () => {
             </CardGroup>
             <Link to={"/"}>
                 <Button variant='outline-danger' className="mt-4" onClick={ logOut } >
-                Desconectarse
+                Logout
                 </Button>
             </Link>
             </Card.Body>

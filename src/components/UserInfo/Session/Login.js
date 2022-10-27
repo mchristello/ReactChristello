@@ -1,16 +1,19 @@
+// Components
+import { UserDetail } from "../UserDetail";
+// Frameworks
 import { Form, Button, Container } from "react-bootstrap";
+// React
 import { UserForm } from '../../UserInfo/Form.js';
 import { Link } from "react-router-dom";
-import "./Login.css";
 import { useContext } from "react";
 import { UserContext } from "../../../context/UserContext";
-import { UserDetail } from "../UserDetail";
-// import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { LoginWithGoogle } from "../../../utils/Firebase/firebase.js";
+// CSS
+import "./Login.css";
+
 
 
 function Login() {
-    const { userState, signIn } = useContext(UserContext);
+    const { userState, signIn, LoginWithGoogle } = useContext(UserContext);
     const { form, handleChange } = UserForm({
         email: "",
         password: "",
@@ -21,8 +24,9 @@ function Login() {
         signIn(form);
     };
 
-    const handleClick = (e) => {
+    const handleClick = () => {
         LoginWithGoogle();
+
     }
 
     return (
@@ -33,7 +37,7 @@ function Login() {
             <Container className="login">
                 <h2>Login</h2>
                 <Form className="login__form" onSubmit={ handleSubmit }>
-                    <h3>Iniciar Sesión</h3>
+                    <h3>Ingresá tus datos</h3>
                     <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
@@ -59,7 +63,7 @@ function Login() {
                         <Button variant='info' type="button" className="login__btn btn-block" onClick={ handleClick }>
                             Login with Google
                         </Button>
-                        <Button variant='secondary' as={Link}to={"/NewUser"} >Crear cuenta.</Button>
+                        <Button variant='secondary' as={Link}to={"/NewUser"} >Crear cuenta</Button>
                     </Form.Group>
                 </Form>
             </Container>

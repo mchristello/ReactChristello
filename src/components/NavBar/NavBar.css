@@ -8,6 +8,7 @@
 .brand {
     font-family: 'Marvel', sans-serif;
     font-size: 1.6rem;
+    margin-left: 4rem;
 }
 
 
@@ -19,4 +20,22 @@
 .account_menu svg {
     font-size: 1.1rem;
     color: #ffffffc9;
+}
+
+
+/* MediaQ */
+
+@media only screen and ( max-width: 990px ) {
+
+    .navBar {
+        width: 50vw;
+        flex-direction: row-reverse;
+        justify-content: flex-start!important;
+        gap: 1rem;
+    }
+
+    .account_menu {
+        flex-direction: column;
+    }
+
 }

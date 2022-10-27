@@ -1,4 +1,4 @@
-import { getFirestore, getDocs, collection, query, where, getDoc, doc, addDoc, serverTimestamp } from "firebase/firestore";
+import { getFirestore, getDocs, collection, query, where, getDoc, doc, addDoc } from "firebase/firestore";
 
     // Funcion para crear las ordenes
     export const setOrder = async (buyer, cart, total) => {
@@ -10,7 +10,6 @@ import { getFirestore, getDocs, collection, query, where, getDoc, doc, addDoc, s
             phone: buyer.phone,
         },
         total: total(),
-        date: serverTimestamp(),
         items: [...cart],
         };
         const resolve = await addDoc(collection(db, "orders"), order);

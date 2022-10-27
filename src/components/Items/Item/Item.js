@@ -1,8 +1,12 @@
+// Frameworks
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { Link } from 'react-router-dom';
 import { FcSearch } from 'react-icons/fc';
+// React
+import { Link } from 'react-router-dom';
+// CSS
 import './Item.css';
+
 
 const Item = ( {product} ) => {
 

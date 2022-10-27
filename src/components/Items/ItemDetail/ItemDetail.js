@@ -1,12 +1,17 @@
+// Components
+import ItemCount from '../ItemCount/ItemCount.js';
+// Frameworks
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import ItemCount from '../ItemCount/ItemCount.js';
-import './ItemDetail.css';
 import { Button, Container } from 'react-bootstrap';
+// React
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useCartContext } from '../../../context/CartContext';
+// CSS
+import './ItemDetail.css';
+
 
 const ItemDetail = ({ product }) => {
 

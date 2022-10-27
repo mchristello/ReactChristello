@@ -4,6 +4,7 @@
 
 .new_user h2 {
     font-family: 'Fredericka the Great', cursive;
+    font-size: 3rem;
     margin: 2rem auto;
 }
 
@@ -16,4 +17,13 @@
     border-radius: 10px;
     border: 1px solid #ffffff2e;
     padding: 3rem;
+}
+
+/* MediaQ */
+
+@media only screen and (max-width: 990px) {
+
+    .new_user__form {
+        width: 90vw;
+    }
 }

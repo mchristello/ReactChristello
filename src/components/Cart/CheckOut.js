@@ -1,11 +1,15 @@
+// Components
+import Login from '../UserInfo/Session/Login.js';
+// Frameworks
 import { Button, Modal, Alert, Container, Card } from "react-bootstrap";
+// React
 import { Link } from "react-router-dom";
-import './CheckOut.css';
 import { useContext, useState } from 'react';
 import { useCartContext } from "../../context/CartContext";
 import { createOrder } from "../../utils/orders";
 import { UserContext } from "../../context/UserContext";
-import Login from '../UserInfo/Session/Login.js';
+// CSS
+import './CheckOut.css';
 
 
 const CheckOut = ({ showModal, onClose }) => {
@@ -18,18 +22,17 @@ const CheckOut = ({ showModal, onClose }) => {
 
     const handleBuy = async () => {
         const newOrder = {
-            buyer: userState,
+            buyer: userState, 
             items: cart,
             total
         }
-        console.log(newOrder);
         const newOrderId = await createOrder(newOrder);
         setOrderId(newOrderId);
         clear();
     }    
 
     return (
-        <div>
+        <div className="modal">
             <Modal show={showModal} onHide={onClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Finalizar comprar</Modal.Title>
@@ -38,9 +41,9 @@ const CheckOut = ({ showModal, onClose }) => {
                 {userState ? (
                         <Container>
                             <Card className="order__card">
-                            <Card.Title>Nombre: {userState.name}</Card.Title>
+                            <Card.Title>Nombre: {userState.name} </Card.Title>
                             <Card.Text>Email: {userState.email}</Card.Text>
-                            <Card.Text>Telefono: {userState.phone}</Card.Text>
+                            <Card.Text>Telefono: {userState.phoneNumber}</Card.Text>
                             {orderId ? (
                                 <Alert key='success' variant='success'>
                                 Numero de orden: <b>{orderId}</b>
@@ -51,7 +54,7 @@ const CheckOut = ({ showModal, onClose }) => {
                                 </Button>
                             )}
                             </Card>
-                        </Container>) : ( <Login /> )}
+                        </Container>) : ( <Login className='login_checkout' /> )}
                 </Modal.Body>
                 <Modal.Footer>
                     {!orderId && (

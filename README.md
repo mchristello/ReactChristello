@@ -1,36 +1,38 @@
 # ReactChristello
  
-## Proyecto Final de ReactJS: PADEL-MARKET 
+## Final Proyect for ReactJS: PADEL-MARKET 
+
 
 ## Demo
 
-![](https://firebasestorage.googleapis.com/v0/b/padel-market-2259b.appspot.com/o/gif_padelMarket.gif?alt=media&token=3b17f47b-3c34-4c80-a796-ff513147c5ed)
+![](https://firebasestorage.googleapis.com/v0/b/padel-market-2259b.appspot.com/o/padel_market_gif.gif?alt=media&token=c30fffb0-4adb-4cfa-8037-c3fda584a391)
 
 
-## S P A - Ecommerce de artículos de Padel
+## S P A - Ecommerce for paddel products
 
-- Tecnologías utilizadas: 
+- Used technologies: 
     - `CRA`.
-    - `Desarrollo con ReactJS (No TypeScript)`
+    - `Dev ReactJS (No TypeScript)`
     - `React Context`
-    - `Utilización de Hooks`
-    - `Firebase para la base de datos de los productos y ordenes de compra.`
+    - `React Hooks`
+    - `Firestore for Database.`
+    - `Firebase Auth authentication, included Google Auth`
 
-### Librerias
-- `Bootsap para estilos generales`
-- `SweetAlert para mensajes en acciones del user`
-- `React Icons para iconos en botones`
+## Framework Dependencies
+- `React Bootstrap for styles`
+- `SweetAlert for some alerts to the user`
+- `React Icons for buttons and nav icons`
 
-### Deployment 
+## Deployment 
 
 [https://mchristello.github.io/ReactChristello/](https://mchristello.github.io/ReactChristello/)
 
-### Estructura de Directorios
+## Directories
 - `/components`
 - `/context`
 - `/utils`
 
-## Scrpts Disponibles
+## Availables Scripts
 
 In the project directory, you can run:
 

@@ -1,18 +1,24 @@
+// Components
+import CheckOut from "./CheckOut";
+// Frameworks
 import { Button, Container, Table } from "react-bootstrap";
 import { IoTrashOutline } from 'react-icons/io5';
 import { FcInfo, FcCancel, FcPaid } from 'react-icons/fc';
 import { TiArrowBack } from 'react-icons/ti';
-import { Link } from "react-router-dom";
+// React
+import { useContext, useState } from "react";
 import { useCartContext } from "../../context/CartContext";
+import { UserContext } from "../../context/UserContext";
+import { Link } from "react-router-dom";
+// CSS
 import './Cart.css';
-import { useState } from "react";
-import CheckOut from "./CheckOut";
 
 
 const Cart = () => {
 
     const { cart, removeItem, clear, total } = useCartContext();
     const [showModal, setShowModal] = useState(false)
+    const { userState } = useContext(UserContext);
 
     const handleRemove = (id) => {
         removeItem(id);
@@ -26,10 +32,13 @@ const Cart = () => {
 
     return ( 
         <Container className="cart">
-            <h1 className="cart__title">Tu carrito de compras.</h1>
+            <h1 className="cart__title">Tu carrito de compras</h1>
                 {showCartTable && 
                     (
                     <div className="cart__table">
+                        { userState && (
+                            <h4>Comprando como {userState.name} {userState.displayName} - {userState.email}</h4>
+                        )}
                         <Table striped bordered hover>
                             <thead>
                                 <tr>
